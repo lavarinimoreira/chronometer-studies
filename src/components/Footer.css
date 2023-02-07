@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+.footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: Orbitron;
+    margin-top: auto;
+    position: relative;
+    bottom:0;
+    
+}
+.footer__div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    width: 100%;
+    font-size: 1.2em;
+}
+.site:hover,
+.git:hover, .mail:hover,
+.linkedin:hover, .twitter:hover,
+.instagram:hover {
+    color: hsl(317 100% 54%);
+    transition: 0.3s;
+}

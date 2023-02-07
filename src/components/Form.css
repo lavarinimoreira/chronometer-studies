@@ -1,0 +1,69 @@
+.form {
+  /* margin: 16px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+    background: linear-gradient(.9turn, #340D34, 50%, #101B40);
+    padding: 24px  64px 16px 64px;
+    border-radius: 8px;
+    margin: 16px 0 24px 0;
+    box-shadow:  0 0 3px black;
+    width: 100%;
+}
+
+.form div {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.label {
+  font-size: 24px;
+  font-family: Orbitron;
+  color: white;
+}
+.input {
+  height: 32px;
+  margin: 8px;
+  border-radius: 4px;
+  /* text-align: center; */
+  border: none;
+  outline: none;
+  background-color: black;
+  color: white;
+  padding: 0 0 0 8px;
+  display: inline-block;
+  
+}
+.li {
+  margin: 0 30px 0 30px;
+}
+
+.form div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 700px) {
+  .label {
+    font-size: 16px;
+    font-family: Orbitron;
+    color: white;
+  }
+  .input {
+    width: 50%;
+    border-radius: 8px;
+  }
+}
+/* Galaxy S8: */
+@media (max-width: 360px) {
+  .label{
+    font-size: 0.8em;
+  }
+}

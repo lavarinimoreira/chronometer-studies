@@ -1,0 +1,39 @@
+.list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.list h2 {
+    font-family: Orbitron;
+    color: white;
+}
+
+.ul {
+    font-family: Orbitron;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none
+}
+
+.ul h3, .ul span{
+    color: white;
+}
+
+.ul h3 {
+    font-size: 1.1em;
+}
+
+.ul span {
+    font-size: .9em;
+}
+
+.ul li {
+    background-color: black;
+    margin: 8px;
+    border-radius: 8px;
+    padding: 8px;
+    width: 20rem;
+}

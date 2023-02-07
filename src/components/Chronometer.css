@@ -1,0 +1,18 @@
+.chronometer {
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+    background: linear-gradient(.9turn, #340D34, 50%, #101B40);
+    padding: 24px  64px 16px 64px;
+    border-radius: 8px;
+    margin: 16px 0 24px 0;
+    box-shadow:  0 0 3px black;
+    width: 100%;
+}
+
+.chronometer p {
+    font-family: Orbitron;
+    color: white;
+}

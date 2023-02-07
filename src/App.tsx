@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Chronometer from './components/Chronometer';
+import Footer from './components/Footer';
+import Form from './components/Form';
+import List from './components/List';
+import { Task } from './model';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [tasks, setTasks] = useState<Task[]>([]);
+    const [task, setTask] = useState<string>('');
+    const [time, setTime] = useState<string>('00:00:00');
+
+    const handleAdd = (e: React.FormEvent) => {
+        e.preventDefault();
+
+        if (task) {
+            setTasks([...tasks, { task, time }]);
+            setTask('');
+            setTime('00:00:00');
+        }
+    };
+
+    return (
+        <div className="main">
+            <div className="fl">
+                <div>
+                    <Form
+                        task={task}
+                        setTask={setTask}
+                        time={time}
+                        setTime={setTime}
+                        handleAdd={handleAdd}
+                    />
+                    <Chronometer />
+                </div>
+                <div>
+                    <List tasks={tasks} />
+                </div>
+            </div>
+            <Footer />
+        </div>
+    );
 }
 
 export default App;

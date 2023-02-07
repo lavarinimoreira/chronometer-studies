@@ -1,0 +1,15 @@
+.timer {
+    margin: 8px;
+    border-radius: 8px;
+    background-color: black;
+    padding: 0 32px 0 32px;
+}
+
+.timer span{
+    font-size: 5em;
+    font-family: Orbitron;
+    color: #d90429;
+    /* ef233c */
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.15em currentColor;
+}
+
