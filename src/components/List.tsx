@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './List.css';
 import { Task } from './../model';
-import Todo from './Task';
+// import Todo from './Task';
 
 interface Props {
     tasks: Task[];
