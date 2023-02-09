@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import Form from './components/Form';
 import List from './components/List';
 import { Task } from './model';
+import { v4 as uuidv4 } from 'uuid';
 
 function App() {
     const [tasks, setTasks] = useState<Task[]>([]);
@@ -16,7 +17,7 @@ function App() {
         if (task) {
             setTasks([
                 ...tasks,
-                { task, time, selected: false, completed: false },
+                { task, time, selected: false, completed: false, id: uuidv4() },
             ]);
             setTask('');
             setTime('00:00:00');
