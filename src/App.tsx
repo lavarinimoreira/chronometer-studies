@@ -14,7 +14,10 @@ function App() {
         e.preventDefault();
 
         if (task) {
-            setTasks([...tasks, { task, time }]);
+            setTasks([
+                ...tasks,
+                { task, time, selected: false, completed: false },
+            ]);
             setTask('');
             setTime('00:00:00');
         }
