@@ -15,18 +15,51 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    list-style-type: none
+    list-style-type: none;
 }
 
-.ul h3, .ul span{
-    color: white;
+div ul .ul-not-selected{
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 15px;
+    box-shadow: inset 0 0 15px #40ffff;
+    background-color: black;
+    transition: 0.2s;
+    
 }
 
-.ul h3 {
+div ul .ul-selected{
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 15px;
+    background-color: black;
+    box-shadow: inset 0 0 15px hsl(317 100% 54%);
+    transition: 0.2s;
+}
+
+div ul .ul-selected:hover{
+    cursor: pointer;
+    box-shadow: inset 0 0 20px hsl(317 100% 54%);
+}
+
+div ul .ul-not-selected:hover{
+    cursor: pointer;
+    box-shadow: inset 0 0 20px #40ffff;
+}
+
+.ul .h3, .ul .span{
+    color: #40ffff;
+}
+
+.ul .h3-selected, .ul .span-selected{
+    color: hsl(317 100% 54%);
+}
+
+.ul .h3 {
     font-size: 1.1em;
 }
 
-.ul span {
+.ul .span {
     font-size: .9em;
 }
 

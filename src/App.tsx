@@ -10,6 +10,18 @@ function App() {
     const [tasks, setTasks] = useState<Task[]>([]);
     const [task, setTask] = useState<string>('');
     const [time, setTime] = useState<string>('00:00:00');
+    const [selected, setSelected] = useState<Task>();
+
+    const taskSelector = (selectedTask: Task) => {
+        setSelected(selectedTask);
+
+        setTasks(
+            tasks.map((t) => ({
+                ...t,
+                selected: t.id === selectedTask.id ? true : false,
+            }))
+        );
+    };
 
     const handleAdd = (e: React.FormEvent) => {
         e.preventDefault();
@@ -35,10 +47,10 @@ function App() {
                         setTime={setTime}
                         handleAdd={handleAdd}
                     />
-                    <Chronometer />
+                    <Chronometer selected={selected} />
                 </div>
                 <div>
-                    <List tasks={tasks} />
+                    <List tasks={tasks} taskSelector={taskSelector} />
                 </div>
             </div>
             <Footer />
