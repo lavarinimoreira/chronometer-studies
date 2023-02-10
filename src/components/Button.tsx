@@ -1,14 +1,16 @@
 import React, { PropsWithChildren } from 'react';
-import "./Button.css";
+import './Button.css';
 
-interface Props extends PropsWithChildren {};
-
-const Button:React.FC<Props> = (props) => {
-  return (
-    <button className='button'>
-        {props.children}
-    </button>
-  )
+interface Props extends PropsWithChildren {
+    onClick?: () => void;
 }
 
-export default Button
+const Button: React.FC<Props> = (props) => {
+    return (
+        <button onClick={props.onClick} className="button">
+            {props.children}
+        </button>
+    );
+};
+
+export default Button;

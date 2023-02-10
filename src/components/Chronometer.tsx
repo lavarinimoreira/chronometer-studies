@@ -19,13 +19,22 @@ const Chronometer: React.FC<Props> = ({ selected }) => {
         }
     }, [selected]);
 
+    const regrets = (counter: number = 0) => {
+        setTimeout(() => {
+            if (counter > 0) {
+                setTime(counter - 1);
+                return regrets(counter - 1);
+            }
+        }, 1000);
+    };
+
     return (
         <div className="chronometer">
             <p>-- Chose a card and start --</p>
             <div>
                 <Timer time={time} />
             </div>
-            <Button>Go!</Button>
+            <Button onClick={() => regrets(time)}>Go!</Button>
         </div>
     );
 };
