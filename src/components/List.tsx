@@ -19,21 +19,21 @@ const List: React.FC<Props> = ({ tasks, taskSelector }) => {
                             item.selected ? 'ul-selected' : 'ul-not-selected'
                         }`}
                         key={item.id}
-                        onClick={() => taskSelector(item)}
+                        onClick={() => !item.completed && taskSelector(item)}
                     >
                         <h3
                             className={` ${
                                 item.selected ? 'h3-selected' : 'h3'
                             }`}
                         >
-                            {item.task}
+                            {item.completed ? <s>{item.task}</s> : item.task}
                         </h3>
                         <span
                             className={`${
                                 item.selected ? 'span-selected' : 'span'
                             }`}
                         >
-                            {item.time}
+                            {item.completed ? <s>{item.time}</s> : item.time}
                         </span>
                     </li>
                 ))}

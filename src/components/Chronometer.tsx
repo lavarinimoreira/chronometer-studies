@@ -8,9 +8,10 @@ import { useState } from 'react';
 
 interface Props {
     selected: Task | undefined;
+    endTask: () => void;
 }
 
-const Chronometer: React.FC<Props> = ({ selected }) => {
+const Chronometer: React.FC<Props> = ({ selected, endTask }) => {
     const [time, setTime] = useState<number>();
 
     useEffect(() => {
@@ -25,6 +26,7 @@ const Chronometer: React.FC<Props> = ({ selected }) => {
                 setTime(counter - 1);
                 return regrets(counter - 1);
             }
+            endTask();
         }, 1000);
     };
 

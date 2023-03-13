@@ -23,6 +23,24 @@ function App() {
         );
     };
 
+    const endTask = () => {
+        if (selected) {
+            setSelected(undefined);
+            setTasks(
+                tasks.map((t) => {
+                    if (t.id === selected.id) {
+                        return {
+                            ...t,
+                            selected: false,
+                            completed: true,
+                        };
+                    }
+                    return t;
+                })
+            );
+        }
+    };
+
     const handleAdd = (e: React.FormEvent) => {
         e.preventDefault();
 
@@ -47,7 +65,7 @@ function App() {
                         setTime={setTime}
                         handleAdd={handleAdd}
                     />
-                    <Chronometer selected={selected} />
+                    <Chronometer selected={selected} endTask={endTask} />
                 </div>
                 <div>
                     <List tasks={tasks} taskSelector={taskSelector} />

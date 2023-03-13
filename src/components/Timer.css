@@ -5,11 +5,10 @@
     padding: 0 32px 0 32px;
 }
 
-.timer span{
+.timer span {
     font-size: 5em;
     font-family: Orbitron;
-    color: #d90429;
+    color: #A0FF94;
     /* ef233c */
-    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.15em currentColor;
+    text-shadow: 0 0 5px #A0FF94;
 }
-
